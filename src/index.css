@@ -1,0 +1,93 @@
+/* VS Code may show a warning here, but it's 100% correct for Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --indigo-primary: #6366f1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* --- Smooth Transitions --- */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* --- Custom Scrollbar for Modern Look --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--indigo-primary);
+}
+
+/* --- Animations for New Comments/Replies --- */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideIn 0.2s ease-out forwards;
+}
+
+/* --- Thread Nesting Visuals --- */
+.thread-container {
+  position: relative;
+}
+
+/* Subtle line to show comment depth */
+.thread-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+/* --- Card & Button Hover Effects --- */
+button:active {
+  transform: scale(0.95);
+}
+
+.bg-white {
+  backface-visibility: hidden;
+}
+
+/* Leaderboard Rank Highlight */
+.leaderboard-card:first-child {
+  border-color: #fbbf24; /* Gold border for Rank 1 */
+  background-color: #fffbeb;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

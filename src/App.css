@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc; /* Subtle light background */
+}
+
+/* Glassmorphism Post Cards */
+.post-card {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Responsive Indentation for Recursive Comments */
+.thread-container {
+  position: relative;
+  margin-left: 0.5rem;
+  /* Thoda dark border taaki threading saaf dikhe */
+  border-left: 2px solid #e2e8f0; 
+  padding-left: 0.75rem;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect taaki pata chale kaunsa comment active hai */
+.thread-container:hover {
+  border-left-color: #6366f1; /* Indigo color on hover */
+}
+
+@media (min-width: 768px) {
+  .thread-container {
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
